@@ -3,8 +3,6 @@ import OptionsPanel from '../OptionsPanel';
 import Board from '../Board';
 import { createTiles } from '../../misc/utils';
 
-
-
 import './App.css';
 
 class App extends Component {
@@ -29,6 +27,10 @@ class App extends Component {
       tiles: createTiles(state.numTiles)
     }));
   }
+
+  handleTileClicked = ( id, color ) => {
+
+  };
 
   render() {
   return (
