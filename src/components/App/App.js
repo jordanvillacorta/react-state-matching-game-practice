@@ -34,10 +34,7 @@ class App extends Component {
       let toBeCleared = state.toBeCleared;
     });
 
-    return {
-      toBeCleared: this.state.toBeCleared,
-      tiles: this.state.tiles
-    }
+    return { toBeCleared, tiles };
   };
 
   render() {
