@@ -39,18 +39,18 @@ class App extends Component {
     if (previousTileIndex !== null) {
       let previousTile = tiles[previousTileIndex];
       let selectedTile = tiles[selectedTileIndex];
+      if (previousTile.id !== selectedTile.id && previousTile.color === color) {
+        selectedTile.matched = true;
+        previousTile.matched = true;
+        previousTileIndex = null;
+      } else {
+        toBeCleared = [previousTileIndex, selectedTileIndex];
+        previousTileIndex = null;
+      }
     } else {
       previousTileIndex = selectedTileIndex;
     }
 
-    if (previousTile.id !== selectedTile.id && previousTile.color === color) {
-      selectedTile.matched = true;
-      previousTile.matched = true;
-      previousTileIndex = null;
-    } else {
-      toBeCleared = [previousTileIndex, selectedTileIndex];
-      previousTileIndex = null;
-    }
 
     return { toBeCleared, tiles, previousTileIndex };
   };
