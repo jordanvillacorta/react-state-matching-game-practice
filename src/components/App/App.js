@@ -16,7 +16,7 @@ class App extends Component {
       toBeCleared: null
     };
 
-    this.startGame = this.startGame.bind(this);
+    // this.startGame = this.startGame.bind(this);
   }
 
   startGame = ( numTiles ) => {
@@ -24,7 +24,7 @@ class App extends Component {
       playing: true,
       previousTileIndex: null,
       toBeCleared: null,
-      tiles: createTiles(state.numTiles)
+      tiles: createTiles(state.numTiles, this.handleTileClicked)
     }));
   }
 
