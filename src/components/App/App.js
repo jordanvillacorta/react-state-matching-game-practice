@@ -42,6 +42,8 @@ class App extends Component {
       toBeCleared = null;
     }
 
+    tiles[selectedTileIndex].selected = true;
+
     if (previousTileIndex !== null) {
       let previousTile = tiles[previousTileIndex];
       let selectedTile = tiles[selectedTileIndex];
