@@ -58,29 +58,27 @@ class App extends Component {
         previousTileIndex = selectedTileIndex;
       }
 
-
       return { toBeCleared, tiles, previousTileIndex };
     });
   };
 
   render() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        Turbo-Matcher
-      </header>
-        <OptionsPanel
-          playing={this.state.playing}
-          numTiles={this.state.numTiles}
-          startGame={this.startGame}
-        />
-        <Board
-          numTiles={this.state.numTiles}
-          tiles={this.state.tiles}
-        />
-    </div>
-  );
-
+    return (
+      <div className="App">
+        <header className="App-header">
+          Turbo-Matcher
+        </header>
+          <OptionsPanel
+            playing={this.state.playing}
+            numTiles={this.state.numTiles}
+            startGame={this.startGame}
+          />
+          <Board
+            numTiles={this.state.numTiles}
+            tiles={this.state.tiles}
+          />
+      </div>
+    );
   }
 }
 
