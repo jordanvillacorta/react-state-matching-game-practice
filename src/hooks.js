@@ -4,6 +4,10 @@ function useHover() {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
 
+  useEffect(() => {
+
+  });
+
   return [ref, hovered];
 }
 
