@@ -4,9 +4,7 @@ function useHover() {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
 
-  function enter() {
-    setHovered(true);
-  }
+  const enter = () => setHovered(true);
 
   useEffect(() => {
     const refCopy = ref;
