@@ -5,6 +5,8 @@ function useHover() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
+    const refCopy = ref;
+    refCopy.current.addEventListener('mouseenter');
     return () => {
 
     };
