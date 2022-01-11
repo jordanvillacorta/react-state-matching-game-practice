@@ -7,6 +7,7 @@ function useHover() {
   useEffect(() => {
     const refCopy = ref;
     refCopy.current.addEventListener('mouseenter');
+    refCopy.current.addEventListener('mouseleave');
     return () => {
 
     };
