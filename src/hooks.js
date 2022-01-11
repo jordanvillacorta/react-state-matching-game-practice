@@ -5,7 +5,9 @@ function useHover() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
+    return () => {
 
+    };
   });
 
   return [ref, hovered];
