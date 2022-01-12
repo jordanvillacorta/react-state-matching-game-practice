@@ -13,6 +13,7 @@ function useHover() {
     refCopy.current.addEventListener('mouseleave', leave);
     return () => {
       refCopy.current.removeEventListener('mouseenter', enter);
+      refCopy.current.removeEventListener('mouseleave', leave);
     };
   });
 
