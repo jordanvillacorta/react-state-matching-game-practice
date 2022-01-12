@@ -77,6 +77,7 @@ class App extends Component {
           Turbo-Matcher
         </header>
           <OptionsPanel
+            handleNumTileChange={this.handleNumTileChange}
             playing={this.state.playing}
             numTiles={this.state.numTiles}
             startGame={this.startGame}
