@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import OptionsPanel from '../OptionsPanel';
 import Board from '../Board';
 import { createTiles, indexOfSelected } from '../../misc/utils';
+import GameContext from '../../GameContext.js';
 
 import './App.css';
 
@@ -76,6 +77,7 @@ class App extends Component {
         <header className="App-header">
           Turbo-Matcher
         </header>
+        <GameContext.Provider value={this.state}>
           <OptionsPanel
             handleNumTileChange={this.handleNumTileChange}
             playing={this.state.playing}
@@ -86,6 +88,7 @@ class App extends Component {
             numTiles={this.state.numTiles}
             tiles={this.state.tiles}
           />
+        </GameContext.Provider>
       </div>
     );
   }
