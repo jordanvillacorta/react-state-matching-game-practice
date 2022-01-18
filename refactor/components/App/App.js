@@ -3,7 +3,6 @@ import OptionsPanel from '../OptionsPanel';
 import Board from '../Board';
 import { createTiles, indexOfSelected } from '../../misc/utils';
 import GameContext from '../../GameContext.js';
-
 import './App.css';
 
 class App extends Component {
@@ -16,8 +15,6 @@ class App extends Component {
       tiles: [],
       toBeCleared: null
     };
-
-    // this.startGame = this.startGame.bind(this);
   }
 
   startGame = ( numTiles ) => {
