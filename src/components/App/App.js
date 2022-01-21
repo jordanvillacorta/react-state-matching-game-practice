@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import OptionsPanel from '../OptionsPanel';
-import Board from '../Board';
-import { createTiles, indexOfSelected } from '../../misc/utils';
-import './App.css';
+import React, { Component } from "react";
+import OptionsPanel from "../OptionsPanel";
+import Board from "../Board";
+import { createTiles, indexOfSelected } from "../../misc/utils";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -12,24 +12,24 @@ class App extends Component {
       playing: false,
       previousTileIndex: null,
       tiles: [],
-      toBeCleared: null
+      toBeCleared: null,
     };
   }
 
-  startGame = ( numTiles ) => {
+  startGame = (numTiles) => {
     this.setState((state) => ({
       playing: true,
       previousTileIndex: null,
       toBeCleared: null,
-      tiles: createTiles(state.numTiles, this.handleTileClicked)
+      tiles: createTiles(state.numTiles, this.handleTileClicked),
     }));
-  }
+  };
 
-  handleTileClicked = ( id, color ) => {
+  handleTileClicked = (id, color) => {
     this.setState((state) => {
       const tiles = state.tiles;
       let toBeCleared = state.toBeCleared;
-      const selectedTileIndex = indexOfSelected( tiles, id, color );
+      const selectedTileIndex = indexOfSelected(tiles, id, color);
       let previousTileIndex = state.previousTileIndex;
 
       if (toBeCleared !== null) {
@@ -43,7 +43,10 @@ class App extends Component {
       if (previousTileIndex !== null) {
         let previousTile = tiles[previousTileIndex];
         let selectedTile = tiles[selectedTileIndex];
-        if (previousTile.id !== selectedTile.id && previousTile.color === color) {
+        if (
+          previousTile.id !== selectedTile.id &&
+          previousTile.color === color
+        ) {
           selectedTile.matched = true;
           previousTile.matched = true;
           previousTileIndex = null;
@@ -59,30 +62,25 @@ class App extends Component {
     });
   };
 
-  handleNumTileChange = ( num ) => {
+  handleNumTileChange = (num) => {
     this.setState({
       numTiles: num,
       playing: false,
-      tiles: []
-    })
-  }
+      tiles: [],
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          Turbo-Matcher
-        </header>
-          <OptionsPanel
-            handleNumTileChange={this.handleNumTileChange}
-            playing={this.state.playing}
-            numTiles={this.state.numTiles}
-            startGame={this.startGame}
-          />
-          <Board
-            numTiles={this.state.numTiles}
-            tiles={this.state.tiles}
-          />
+        <header className="App-header">Turbo-Matcher</header>
+        <OptionsPanel
+          handleNumTileChange={this.handleNumTileChange}
+          playing={this.state.playing}
+          numTiles={this.state.numTiles}
+          startGame={this.startGame}
+        />
+        <Board numTiles={this.state.numTiles} tiles={this.state.tiles} />
       </div>
     );
   }
