@@ -1,3 +1,3 @@
-import OptionsPanel from './OptionsPanel'
+import OptionsPanel from "./OptionsPanel";
 
-export default OptionsPanel
+export default OptionsPanel;
